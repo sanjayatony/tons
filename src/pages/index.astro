@@ -1,29 +1,63 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
 
-const posts = await getCollection('posts');
+interface Post {
+	slug: string;
+	data: {
+		title: string;
+		publishedDate: string;
+		tags: string[];
+	};
+}
+let posts: Post[] = await getCollection("posts");
+posts = posts.sort((a, b) => new Date(b.data.publishedDate) - new Date(a.data.publishedDate));
+
+const info = [
+	{
+		label: "github.com/sanjayatony",
+		link: "https://github.com/sanjayatony",
+	},
+	{
+		label: "twitter.com/sanjayatony",
+		link: "https://twitter.com/sanjayatony",
+	},
+	{
+		label: "tony@sanjaya.info",
+		link: "mailto:tony@sanjaya.info",
+	},
+];
+console.log(posts);
 ---
 
-<Layout title="Keystatic & Astro's Content Collections">
-  <div>
-    <h1>Keystatic ⚡️ + Astro 🚀</h1>
-    <p>
-      This homepage shows how to load data from Astro's content collections.
-    </p>
-    <p>
-      <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
-      below to view a post in the collection.
-    </p>
-    <h2>Posts</h2>
-    <ul>
-      {
-        posts.map(post => (
-          <li>
-            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+<Layout title="ton's">
+	<div>
+		<ul class="parent-ul">
+			<li>
+				info
+				<ul class="child-ul">
+					{
+						info.map((item) => (
+							<li>
+								<a href={item.link}>{item.label}</a>
+							</li>
+						))
+					}
+				</ul>
+				<li>
+					all posts
+					<ul class="posts">
+						{
+							posts.map((post) => (
+								<li>
+									{post.data.publishedDate}
+									<a href={`/posts/${post.slug}`}>{post.data.title}</a> ({post.data.tags.join(", ")})
+								</li>
+							))
+						}
+					</ul>
+				</li>
+			</li>
+		</ul>
+	</div>
 </Layout>

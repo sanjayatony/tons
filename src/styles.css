@@ -1,10 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=UnifrakturMaguntia&display=swap");
+:root {
+	--bg: #fffcf0;
+	--txt: #100f0f;
+	--purple: rgb(94, 64, 157);
+	--red: rgb(175, 48, 41);
+	--blue: rgb(32, 94, 166);
+	--cyan: #3aa99f;
+	--magenta: #ce5d97;
+	--green: #879a39;
+	--orange: #da702c;
+	--txt-mono: "code-saver", monospace;
+}
+
 html {
-  max-width: 70ch;
-  padding: 3rem 1rem;
-  margin: auto;
-  line-height: 1.75;
-  font-size: 1.25rem;
-  font-family: sans-serif;
+	background-color: var(--bg);
+	max-width: 600px;
+	padding: 1rem;
+	font-family: var(--txt-mono);
+	font-weight: 400;
+	color: var(--txt);
+}
+a {
+	color: var(--blue);
+}
+a:visited {
+	color: var(--purple);
 }
 
 h1,
@@ -13,17 +33,71 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1rem 0 1rem;
+	margin: 4rem 0 1rem;
 }
 
 p,
 ul,
 ol {
-  margin-bottom: 1rem;
-  color: #1d1d1d;
+	margin-bottom: 1.2rem;
+}
+p {
+	line-height: 1.8;
+}
+li {
+	margin: 0.5rem 0;
+	line-height: 1.8;
+}
+hr {
+	margin: 32px 0;
+	border-top: 1px solid #ddd;
+}
+blockquote {
+	font-family: serif;
+	border-left: 2px solid var(--orange);
+	margin: 32px 0 0 8px;
+	padding-left: 1rem;
+}
+blockquote p {
+	margin-bottom: 0.7rem !important;
+	line-height: 1;
+}
+img {
+	height: auto;
+	max-width: 100%;
+}
+header {
+	margin-bottom: 2rem;
+}
+header h1 {
+	margin: 0;
+}
+header h1 a {
+	font-family: "UnifrakturMaguntia", monospace;
+	font-size: 4rem;
+	color: var(--txt) !important;
+	text-decoration: none;
 }
 
-img {
-  height: auto;
-  max-width: 100%;
+header h1:hover .thick {
+	color: var(--red);
+}
+.posts {
+	text-transform: lowercase;
+}
+ul {
+	margin-left: 0;
+	padding-left: 1rem;
+	//list-style-position: inside;
+}
+ul ul {
+	padding-left: 1rem;
+}
+.post-date {
+	font-size: 0.8rem;
+	margin-top: 32px;
+	background: var(--orange);
+	padding: 4px;
+	display: inline-block;
+	color: #fff;
 }
