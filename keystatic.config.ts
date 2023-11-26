@@ -13,7 +13,10 @@ export default config({
 			schema: {
 				title: fields.slug({ name: { label: "Title" } }),
 				publishedDate: fields.date({ label: "Published date" }),
-				tags: fields.array({ label: "Tags" }),
+				tags: fields.array(fields.text({ label: "Tag" }), {
+					label: "Tag",
+					itemLabel: (props) => props.value,
+				}),
 				content: fields.document({
 					label: "Content",
 					formatting: true,
