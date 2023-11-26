@@ -36,9 +36,12 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="">
-		<header>
+		<header class="site-header">
 			<h1><a href="/">ton<span class="thick">'</span>s</a></h1>
+			<span class="words">飛べ</span>
 		</header>
-		<slot />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>

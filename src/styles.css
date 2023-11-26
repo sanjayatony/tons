@@ -12,7 +12,7 @@
 	--txt-mono: "code-saver", monospace;
 }
 
-html {
+body {
 	background-color: var(--bg);
 	max-width: 600px;
 	padding: 1rem;
@@ -67,7 +67,7 @@ img {
 	max-width: 100%;
 }
 header {
-	margin-bottom: 2rem;
+	margin-bottom: 4rem;
 }
 header h1 {
 	margin: 0;
@@ -81,6 +81,15 @@ header h1 a {
 
 header h1:hover .thick {
 	color: var(--red);
+}
+.site-header .words {
+	font-size: 1rem;
+	padding: 0.1rem 0.3rem;
+	letter-spacing: 0.3rem;
+	color: var(--orange);
+}
+main {
+	padding-bottom: 2rem;
 }
 .posts {
 	text-transform: lowercase;
@@ -100,4 +109,13 @@ ul ul {
 	padding: 4px;
 	display: inline-block;
 	color: #fff;
+}
+.site-footer {
+	position: fixed;
+	bottom: 1rem;
+	color: #fff;
+	font-size: 1.5rem;
+	padding: 0.2rem 1rem;
+	background: var(--txt);
+	opacity: 0.7;
 }
