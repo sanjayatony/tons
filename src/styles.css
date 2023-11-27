@@ -15,6 +15,7 @@
 body {
 	background-color: var(--bg);
 	max-width: 600px;
+	margin: 0 auto;
 	padding: 1rem;
 	font-family: var(--txt-mono);
 	font-weight: 400;
