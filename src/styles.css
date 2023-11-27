@@ -106,10 +106,15 @@ ul ul {
 .post-date {
 	font-size: 0.8rem;
 	margin-top: 32px;
-	background: var(--orange);
+	background: var(--green);
 	padding: 4px;
 	display: inline-block;
 	color: #fff;
+}
+.post-tags {
+	font-size: 1rem;
+	display: inline-block;
+	color: var(--magenta);
 }
 .site-footer {
 	position: fixed;

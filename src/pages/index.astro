@@ -49,7 +49,7 @@ const info = [
 						posts.map((post) => (
 							<li>
 								{post.data.publishedDate}
-								<a href={`/posts/${post.slug}`}>{post.data.title}</a> ({post.data.tags.join(", ")})
+								<a href={`/posts/${post.slug}`}>{post.data.title}</a> <small>({post.data.tags.join(", ")})</small>
 							</li>
 						))
 					}
